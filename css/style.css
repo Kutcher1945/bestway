@@ -19,6 +19,106 @@
     height: auto; /* Keeps the aspect ratio */
 }
 
+.carousel-img-small {
+    width: 500px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.hero{
+    position: relative;
+    max-width: 1440px;
+    margin: auto;
+    padding: 75px 75px 75px 0px;
+}
+.hero img{
+    width: 625px;
+    z-index: -1;
+}
+.hero .main-title{
+    position: absolute;
+    right: 75px;
+    top: 0;
+    width: 55%;
+    z-index: 1;
+}
+.h1{
+    font-size: 5rem;
+}
+.h1::before{
+    content: '';
+    position: absolute;
+    top: 45px;
+    height: 40px;
+    background-color: #009CFF;
+    width: 65%;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    z-index: -1;
+}
+.quote{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 75px;
+}
+.quote p{
+    width: 450px;
+}
+.bg-black{
+    margin-top: 50px;
+    padding: 70px;
+    color: #fff;
+    background-color: black;
+}
+.bg-black h2{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.bg-black h4{
+    color: #009CFF;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+.bg-black p{
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+@media (max-width:1080px){
+    .navbar{
+        padding: 20px 50px;
+    }
+    .social-menu{
+        width: 40px;
+    }
+    .hero img{
+        width: 500px;
+    }
+    .hero .main-title{
+        right: 40px;
+    }
+    .h1{
+        font-size: 3rem;
+    }
+    .h1::before {
+        top: 28px;
+        height: 20px;
+    }
+    .bg-black{
+        padding: 50px;
+    }
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
