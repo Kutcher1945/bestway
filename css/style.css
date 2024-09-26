@@ -14,23 +14,76 @@
     z-index: 99;
 }
 
-.small-logo {
-    width: 50%; /* Adjust this value to your needs */
-    height: auto; /* Keeps the aspect ratio */
+.container-fluid {
+    background-color: #f9f9f9; /* Light background for modern look */
 }
 
-.carousel-img-small {
-    width: 500px;
-    height: auto; /* Maintain aspect ratio */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #e0f2ff; /* Light blue background for icon */
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for modern touch */
+    font-size: 1.5rem; /* Increase icon size */
 }
+
+.navbar-brand img {
+    max-width: 180px;
+    border-radius: 15px; /* Add rounded corners to the logo */
+}
+
+h6, p {
+    margin: 0;
+    color: #333; /* Dark text color for readability */
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+p {
+    font-size: 0.9rem;
+    color: #666; /* Subtle grey for less emphasis */
+}
+
+.d-flex {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+    .icon-container {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
 
 .hero {
     padding-block-start: 40px;
     padding-block-end: 40px;
-    min-height: 40vh;
+    background: linear-gradient(to right, #7b3eff, #41b0ff); /* Gradient color similar to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.text-container {
+    background-color: #ffffff; /* Solid white background */
+    color: #000000; /* Black text color */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
@@ -46,7 +99,7 @@
 .hero p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--dark-gray);
+    color: black;
     max-width: 600px;
     margin-bottom: 20px;
 }
@@ -55,20 +108,21 @@
     margin-top: 20px;
     padding: 15px 30px;
     font-size: 1.1rem;
-    background-color: #ff5e57;
+    background-color: #ffdd57; /* Yellow button */
     border: none;
-    color: white;
+    color: black;
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-img {
     text-align: center;
+    max-width: 100%;
 }
 
 .hero-img img {
-    max-width: 100%; /* Ensure image takes up full width of its column */
-    height: auto; /* Keep image proportionate */
+    max-width: 100%; 
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -82,11 +136,6 @@
         gap: 30px;
     }
 }
-
-
-
-
-
 
 #particle-canvas {
     position: absolute;
@@ -149,63 +198,91 @@
 
 
 /*** Navbar ***/
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-.navbar .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 20px 0;
-    color: #FFFFFF;
-    font-weight: 500;
-    outline: none;
-}
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: var(--dark);
+/* Navbar Visual Styling */
+.navbar {
+    background: linear-gradient(90deg, #ffdd57, #41b0ff);
+    transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
 }
 
 .navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+    top: 0;
+    background-color: #0056b3; /* Darker background on scroll */
 }
 
+.navbar .nav-link {
+    margin-right: 30px;
+    color: #ffffff; /* White text color */
+    padding: 20px 0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffdd57; /* Highlight on hover or active */
+    background-color: transparent;
+}
+
+/* Ensure the dropdown menu stays aligned with its toggle */
+.navbar .dropdown-menu {
+    top: 100%; /* Align the dropdown with its parent */
+    margin-top: 0; /* Remove any top margin that pushes it down */
+    padding-top: 0; /* Remove any extra padding that might push it */
+}
+
+/* Ensure there's no margin or padding on the dropdown toggle */
+.navbar .dropdown-toggle {
+    margin-bottom: 0; /* Ensure no margin below the dropdown toggle */
+    padding-bottom: 0; /* Remove unnecessary padding */
+}
+
+
+
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link {
+    .navbar .nav-link {
         margin-right: 0;
         padding: 8px 0;
     }
-
     .navbar .navbar-nav {
         margin-top: 8px;
-        border-top: 1px solid rgba(256, 256, 256, .1)
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
+/* Dropdown Menu Styling */
 @media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
+    .navbar .dropdown-menu {
         visibility: hidden;
-        top: 100%;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        transition: .5s;
         opacity: 0;
+        transform: translateY(20px); /* Dropdown transition effect */
+        transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        background-color: #ffffff; /* White background for dropdown */
+        border-radius: 0.5rem; /* Rounded dropdown */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
 
     .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
         visibility: visible;
-        transition: .5s;
         opacity: 1;
+        transform: translateY(0); /* Dropdown shows smoothly */
     }
 }
+
+/* Button Styling */
+.btn-light {
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 
 
 /*** Header ***/
@@ -534,28 +611,27 @@
 
 
 /*** Footer ***/
+.footer {
+    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Gradient background */
+    color: black; /* Text color */
+}
+
+.footer h5,
+.footer p,
+.footer a {
+    color: black; /* Change text color to black */
+}
+
 .footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    color: var(--secondary);
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
+    color: black; /* Change link color to black */
 }
 
 .footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: var(--secondary);
-    margin-right: 10px;
+    color: black; /* Change icon color to black */
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary);
+    color: white; /* Add contrast on hover */
     letter-spacing: 1px;
     box-shadow: none;
 }
@@ -563,13 +639,14 @@
 .footer .copyright {
     padding: 25px 0;
     font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Adjust for better contrast */
 }
 
 .footer .copyright a {
-    color: var(--light);
+    color: black; /* Change copyright link color */
 }
 
 .footer .copyright a:hover {
-    color: var(--primary);
+    color: white; /* Change hover color */
 }
+

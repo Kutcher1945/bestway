@@ -42,7 +42,7 @@
 
 
     <!-- Верхняя панель -->
-    <div class="container-fluid bg-light px-0 wow fadeIn" data-wow-delay="0.1s">
+    <!-- <div class="container-fluid bg-light px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <ol class="breadcrumb mb-0">
@@ -62,23 +62,23 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Верхняя панель конец -->
 
 
     <!-- Логотип и контактная информация -->
-    <div class="container-fluid py-2 px-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- <div class="container-fluid py-3 px-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="row align-items-center top-bar">
             <div class="col-lg-4 col-md-12 text-center text-lg-start">
-                <a href="" class="navbar-brand m-0 p-0">
+                <a href="#" class="navbar-brand m-0 p-0">
                     <img src="img/logo.png" alt="Логотип" class="small-logo">
-                </a>                
+                </a>
             </div>
             <div class="col-lg-8 col-md-7 d-none d-lg-block">
                 <div class="row">
                     <div class="col-4">
                         <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                            <div class="icon-container">
                                 <i class="far fa-clock text-primary"></i>
                             </div>
                             <div class="ps-3">
@@ -90,7 +90,7 @@
                     </div>
                     <div class="col-4">
                         <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                            <div class="icon-container">
                                 <i class="fa fa-phone text-primary"></i>
                             </div>
                             <div class="ps-3">
@@ -102,7 +102,7 @@
                     </div>
                     <div class="col-4">
                         <div class="d-flex align-items-center justify-content-end">
-                            <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                            <div class="icon-container">
                                 <i class="far fa-envelope text-primary"></i>
                             </div>
                             <div class="ps-3">
@@ -114,25 +114,28 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>     -->
     <!-- Логотип и контактная информация конец -->
 
 
     <!-- Навигационная панель -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="#" class="navbar-brand ms-3 d-lg-none">МЕНЮ</a>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn shadow" data-wow-delay="0.1s">
+        <a href="#" class="navbar-brand">
+            <!-- Add the logo image here -->
+            <img src="img/logo.png" alt="Логотип" class="small-logo" style="width: 90%;">
+        </a>
         <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav me-auto p-3 p-lg-0">
-                <a href="" class="nav-item nav-link active">Главная</a>
-                <a href="" class="nav-item nav-link">О нас</a>
-                <a href="" class="nav-item nav-link">Услуги</a>
-                <a href="" class="nav-item nav-link">Проекты</a>
+                <a href="#hero" class="nav-item nav-link active" style="color: black;">Главная</a>
+                <a href="#aboutus" class="nav-item nav-link active" style="color: black;">О нас</a>
+                <a href="#services" class="nav-item nav-link active" style="color: black;">Услуги</a>
+                <a href="" class="nav-item nav-link active" style="color: black;">Проекты</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Страницы</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="color: black;">Страницы</a>
+                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom shadow m-0">
                         <a href="" class="dropdown-item">Блог</a>
                         <a href="" class="dropdown-item">Особенности</a>
                         <a href="" class="dropdown-item">Наша команда</a>
@@ -140,29 +143,31 @@
                         <a href="" class="dropdown-item">Страница 404</a>
                     </div>
                 </div>
-                <a href="" class="nav-item nav-link">Контакты</a>
+                <a href="" class="nav-item nav-link active" style="color: black;">Контакты</a>
             </div>
             <a href="" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Начать</a>
         </div>
-    </nav>
+    </nav>    
     <!-- Навигационная панель конец -->
 
 
     <!-- Hero Section Start -->
-    <div class="hero">
+    <div class="hero" id="hero">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="hero-content h-100">
-                        <h6 class="section-title bg-white text-start text-primary pe-3">Добро пожаловать в BestWay</h6>
-                        <h1 class="display-6 mb-4">Поднимите свой бренд на новый уровень с нами!</h1>
-                        <p class="mb-4">
-                            В BestWay Digital Marketing Agency мы предоставляем более 5 лет опыта, чтобы помочь вам 
-                            улучшить ваш бренд. Будь то цифровые маркетинговые стратегии, SEO услуги или индивидуальный 
-                            дизайн и разработка — мы здесь, чтобы предложить решения, которые приносят результаты. 
-                            Сотрудничайте с нами для прозрачной коммуникации и глубокого понимания местных рынков!
-                        </p>
-                        <a href="#services" class="btn btn-primary px-4 py-2">Узнать больше</a>
+                        <div class="text-container p-4"> <!-- Add a container with padding -->
+                            <p class="display-6 mb-4">Добро пожаловать в BestWay</h6>
+                            <h2 class="display-6 mb-4">Поднимите свой бренд на новый уровень с нами!</h6>
+                            <p class="mb-4">
+                                В BestWay Digital Marketing Agency мы предоставляем более 5 лет опыта, чтобы помочь вам 
+                                улучшить ваш бренд. Будь то цифровые маркетинговые стратегии, SEO услуги или индивидуальный 
+                                дизайн и разработка — мы здесь, чтобы предложить решения, которые приносят результаты. 
+                                Сотрудничайте с нами для прозрачной коммуникации и глубокого понимания местных рынков!
+                            </p>
+                            <a href="#services" class="btn btn-primary px-4 py-2" style="color: black;">Узнать больше</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -172,7 +177,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
     <!-- Hero Section End -->
 
 
@@ -214,7 +219,7 @@
     
 
     <!-- About Section -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="aboutus">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -251,7 +256,7 @@
     <!-- О нас конец -->
 
     <!-- Услуги -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="services">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h6 class="section-title bg-white text-center text-primary px-3">Услуги</h6>
@@ -491,19 +496,20 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="">BestWay</a>, Все права защищены.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        Дизайн от <a href="">iTry</a>
-                    </div>
+        
+    </div>
+    <div class="container-fluid copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 ">
+                    &copy; <a href="">BestWay</a>, Все права защищены.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    Дизайн от <a href="">iTry</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
     <!-- Футер конец -->
 
     <!-- Back to Top -->
