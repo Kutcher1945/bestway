@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --primary: #41b0ff;
     --secondary: #777777;
     --light: #F8F8F8;
     --dark: #252525;
@@ -195,6 +195,62 @@ p {
     justify-content: center;
     font-weight: normal;
 }
+
+.rounded-pill-title {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffdd57; /* Yellow background color */
+    color: black; /* Black text */
+    border-radius: 50px; /* Full round pill effect */
+    font-size: 1.5rem; /* Adjust font size to match your design */
+    font-weight: bold;
+}
+
+
+.gradient-text {
+    background: linear-gradient(to right, #7b3eff, #41b0ff); /* Gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make text transparent to show the gradient */
+    font-weight: bold; /* Make the text bold if needed */
+}
+
+/* Initial background for the testimonial boxes */
+/* Gradient animation applied directly to all testimonial boxes */
+/* Override for testimonial items to prevent using --primary */
+.gradient-box {
+    background: linear-gradient(270deg, #ffdd57, #41b0ff, #7b3eff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: #000 !important;  /* Set the color to black or desired color */
+    border: none;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item h5,
+.testimonial-item p,
+.testimonial-item span {
+    color: #000 !important;  /* Set the color to black or any other color */
+}
+
+/* Continuous gradient animation */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Adjust box shadow on hover */
+.gradient-box:hover {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
 /*** Navbar ***/
