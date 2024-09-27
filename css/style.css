@@ -66,16 +66,29 @@ p {
 .hero {
     padding-block-start: 40px;
     padding-block-end: 40px;
-    background: linear-gradient(to right, #7b3eff, #41b0ff); /* Gradient color similar to the image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(90deg, #7b3eff, #41b0ff);
+    background-size: 200% 200%; /* Increase background size to allow animation */
+    background-position: 0% 50%; /* Start position for the animation */
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    animation: gradientShift 10s ease infinite; /* Animation name and duration */
 }
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .text-container {
     background-color: #ffffff; /* Solid white background */
@@ -146,6 +159,29 @@ p {
 }
 
 
+/* AboutUs */
+#aboutus {
+    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background-size: 200% 200%; /* Increase background size for animation */
+    animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.text-primary2{
+    color: #fff;
+}
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -204,8 +240,19 @@ p {
     border-radius: 50px; /* Full round pill effect */
     font-size: 1.5rem; /* Adjust font size to match your design */
     font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.rounded-pill-title2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffdd57; /* Yellow background color */
+    color: rgb(255, 255, 255); /* Black text */
+    border-radius: 50px; /* Full round pill effect */
+    font-size: 1.5rem; /* Adjust font size to match your design */
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
 
 .gradient-text {
     background: linear-gradient(to right, #7b3eff, #41b0ff); /* Gradient color */
@@ -458,6 +505,7 @@ p {
     position: relative;
     height: 100%;
     min-height: 400px;
+    
 }
 
 .img-border::before {
@@ -467,9 +515,10 @@ p {
     left: 0;
     right: 3rem;
     bottom: 3rem;
-    border: 5px solid var(--primary);
+    border: 5px solid white; /* Changed from var(--primary) to white */
     border-radius: 6px;
 }
+
 
 .img-border img {
     position: absolute;
@@ -489,7 +538,7 @@ p {
 
 .fact-item:hover {
     margin-top: -10px;
-    background: #FFFFFF !important;
+    background: #ffdd57 !important;
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
 }
 
