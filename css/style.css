@@ -845,16 +845,13 @@ p {
     padding-bottom: 0; /* Remove any padding from the bottom of the section */
 }
 
-/* Optional: Adjust form container spacing */
 form {
     margin-top: 0; /* Ensure there is no margin on top */
     margin-bottom: 0; /* Ensure there is no margin at the bottom */
 }
 
-
 .section-title h1 {
     font-size: 3rem;
- 
     color: white;
 }
 
@@ -865,7 +862,14 @@ form {
     margin: 10px auto;
 }
 
-/* Form Styles */
+/* Remove ::before and ::after elements */
+.section-title::before,
+.section-title::after {
+    content: none; /* This will remove any pseudo-elements */
+    display: none; /* Just in case they have display properties */
+}
+
+
 form {
     background-color: white;
     border-radius: 15px;
@@ -904,7 +908,6 @@ form textarea.form-control {
     color: white;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .section-title h1 {
         font-size: 2rem;
@@ -917,6 +920,7 @@ form textarea.form-control {
         font-size: 0.9rem;
     }
 }
+
 
 
 

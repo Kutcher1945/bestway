@@ -47,23 +47,83 @@
             <div class="col-lg-6 px-5 text-start">
                 <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item"><a class="small text-secondary" href="#hero">Главная</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Карьера</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Условия</a></li>
-                    <li class="breadcrumb-item"><a class="small text-secondary" href="#">Конфиденциальность</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="#" data-bs-toggle="modal" data-bs-target="#careerModal">Карьера</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Условия</a></li>
+                    <li class="breadcrumb-item"><a class="small text-secondary" href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Конфиденциальность</a></li>
                 </ol>
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small>Позвонить нам:</small>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <!-- Set target="_blank" to open in a new tab -->
                     <a id="contact-link" href="tel:+77014840884" target="_blank">
-                        <i class=""></i>+7 (701) 484 08 84
+                        +7 (701) 484 08 84
                     </a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Верхняя панель конец -->
+    
+    <!-- Карьера Modal -->
+    <div class="modal fade" id="careerModal" tabindex="-1" aria-labelledby="careerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="careerModalLabel">Карьера</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Add the content for the "Карьера" section here -->
+            <p>В BESTWAY DIGITAL мы всегда рады талантам, которые стремятся расти и развиваться вместе с нами. Узнайте о текущих вакансиях.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Условия Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="termsModalLabel">Условия</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Add the content for the "Условия" section here -->
+            <p>Условия предоставления услуг BESTWAY DIGITAL. Прочитайте полные условия и политики.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Конфиденциальность Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="privacyModalLabel">Конфиденциальность</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Add the content for the "Конфиденциальность" section here -->
+            <p>BESTWAY DIGITAL серьезно относится к защите данных. Ознакомьтесь с нашей политикой конфиденциальности.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Include Bootstrap JavaScript at the end of your HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     <!-- Логотип и контактная информация -->
@@ -154,7 +214,7 @@
     <!-- Hero Section Start -->
     <div class="hero" id="hero">
         <div class="container">
-            <div class="row g-5 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="hero-content h-100">
                         <div class="text-container p-4" style="border: 2px solid black; border-radius: 15px;">
@@ -700,7 +760,6 @@
                         <h6 class="rounded-pill-title" style="color: black;">Связь с нами</h6>
                         <h1 class="display-4 text-white fw-semibold" style="margin-bottom: 15px;">Свяжитесь с нами прямо сейчас!</h1>
                         <p class="text-white mb-4" style="font-size: 1.2rem;">Мы всегда на связи. Позвоните нам или отправьте сообщение.</p>
-                        <div class="line bg-white"></div>
                     </div>
                 </div>
             </div>
@@ -721,6 +780,7 @@
             </div>
         </div>
     </section>
+
 
 
     <!-- Футер -->
