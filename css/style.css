@@ -265,7 +265,7 @@ p {
 
 .project-image {
     width: 100%;
-    height: 250px; /* Set a fixed height for all project images */
+    height: 100%; /* Set a fixed height for all project images */
     object-fit: cover; /* Ensure the image covers the area, cropping excess parts */
 }
 /*** Button ***/
@@ -619,6 +619,14 @@ p {
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
 }
 
+/* Change icon and text color to black on hover */
+.fact-item:hover .fa, /* Targeting the icon */
+.fact-item:hover h5,  /* Targeting the text */
+.fact-item:hover h1 {
+    color: black !important; /* Force black color */
+}
+
+
 
 /*** Service ***/
 .service-item {
@@ -696,74 +704,106 @@ p {
 
 /*** Team ***/
 .team-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
-}
-
-.team-item .team-text {
-    position: relative;
-    height: 65px;
-    overflow: hidden;
-}
-
-.team-item .team-title {
-    position: absolute;
-    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
     height: 100%;
-    top: 0;
-    left: 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    transition: .5s;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
 }
 
-.team-item:hover .team-title {
-    top: -65px;
+.team-item:hover {
+    background-color: #ffdd57; /* Yellow background on hover */
+    transform: translateY(-10px); /* Lifts the card up slightly */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
 }
 
-.team-item .team-social {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 65px;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    transition: .5s;
+/* Icon styling */
+.team-icon {
+    color: black; /* Icon color stays black */
+    transition: color 0.3s ease; /* Smooth color change */
 }
 
-.team-item .team-social .btn {
-    margin: 0 3px;
+.team-item:hover .team-icon {
+    color: black; /* Keep the icon black even on hover */
 }
 
-.team-item:hover .team-social {
-    top: 0;
+.team-text h5 {
+    font-size: 1.2rem; /* Reduced size for heading */
+    margin-bottom: 10px;
+    color: black;
+    transition: color 0.3s ease; /* Smooth transition for text */
 }
+
+.team-text span {
+    font-size: 0.9rem; /* Size for role text */
+    color: #555;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.team-text p {
+    font-size: 0.85rem; /* Additional role description */
+    color: #555;
+    margin: 0;
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover effects for text */
+.team-item:hover h5,
+.team-item:hover span,
+.team-item:hover p {
+    color: black; /* Change text to black on hover */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .team-text h5 {
+        font-size: 1rem;
+    }
+
+    .team-text span, .team-text p {
+        font-size: 0.8rem;
+    }
+
+    .team-item img {
+        width: 60%;
+    }
+}
+
+
 
 
 /*** Testimonial ***/
 
-.testimonial-carousel .owl-item .testimonial-item img {
-    width: 60px;
-    height: 60px;
-}
-
+/* Default styling for testimonial items */
 .testimonial-carousel .owl-item .testimonial-item,
 .testimonial-carousel .owl-item .testimonial-item * {
     transition: .5s;
+    color: #ffffff; /* Default text color: white */
 }
 
+/* When a card is hovered, change text color to black */
+.testimonial-carousel .owl-item:hover .testimonial-item,
+.testimonial-carousel .owl-item:hover .testimonial-item * {
+    color: #000000 !important; /* Text color when hovering: black */
+}
+
+/* Styling for the centered testimonial item */
 .testimonial-carousel .owl-item.center .testimonial-item {
-    background: var(--primary) !important;
+    background: #ffdd57; /* Background for centered card */
 }
 
+/* Ensure text is black for centered card */
 .testimonial-carousel .owl-item.center .testimonial-item * {
-    color: #FFFFFF !important;
+    color: #000000 !important;
 }
 
+/* Navigation buttons */
 .testimonial-carousel .owl-nav {
     margin-top: 30px;
     display: flex;
@@ -790,6 +830,94 @@ p {
     border-color: var(--primary);
     background: var(--primary);
 }
+
+/* CONTACT */
+
+/* Contact Section */
+/* Remove white space from above and below */
+#contact {
+    padding-top: 0; /* Remove top padding */
+    padding-bottom: 0; /* Remove bottom padding */
+}
+
+.section-padding {
+    padding-top: 0; /* Remove any padding from the top of the section */
+    padding-bottom: 0; /* Remove any padding from the bottom of the section */
+}
+
+/* Optional: Adjust form container spacing */
+form {
+    margin-top: 0; /* Ensure there is no margin on top */
+    margin-bottom: 0; /* Ensure there is no margin at the bottom */
+}
+
+
+.section-title h1 {
+    font-size: 3rem;
+ 
+    color: white;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto;
+}
+
+/* Form Styles */
+form {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+form .form-control {
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+form .form-control:focus {
+    box-shadow: none;
+    border-color: #ffdd57;
+}
+
+form textarea.form-control {
+    resize: none;
+}
+
+.btn-brand {
+    background-color: #ffdd57;
+    color: black;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-brand:hover {
+    background-color: #41b0ff;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title h1 {
+        font-size: 2rem;
+    }
+    form {
+        padding: 20px;
+    }
+    .form-group .form-control {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
 
 
 /*** Footer ***/
