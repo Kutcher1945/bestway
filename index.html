@@ -413,6 +413,7 @@
 
 
     <!-- Проекты -->
+    <!-- Projects Section -->
     <div class="container-xxl py-5" id="projects">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -420,61 +421,49 @@
                 <h1 class="display-6 mb-4">Узнайте больше о наших завершенных проектах</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <!-- Project 1: Web Design and Development -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="01">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="01" onclick="openProjectPopup(1)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-1.jpg" alt="Web Design Project">
-                        <a href="img/project-1.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
                     <h6 style="color: white;">UI / UX / Веб-дизайн и разработка</h6>
                     <span style="color: white;">Atmosfar Aluminium</span>
                 </div>
 
-                <!-- Project 2: App Development -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="02">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="02" onclick="openProjectPopup(2)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-2.jpg" alt="App Development Project">
-                        <a href="img/project-2.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
                     <h6 style="color: white;">Разработка приложения Ivy Wallet</h6>
                     <span style="color: white;">Менеджер финансов</span>
                 </div>
 
-                <!-- Project 3: SEO Optimization -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="03">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="03" onclick="openProjectPopup(3)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-3.jpg" alt="SEO Project">
-                        <a href="img/project-3.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
                     <h6 style="color: white;">SEO-оптимизация для TechShop.kz</h6>
                     <span style="color: white;">Шестимесячный план по SEO</span>
                 </div>
 
-                <!-- Project 4: Social Media Marketing -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="04">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="04" onclick="openProjectPopup(4)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-4.jpg" alt="Social Media Marketing Project">
-                        <a href="img/project-4.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
                     <h6 style="color: white;">Социальный маркетинг для Foodie</h6>
                     <span style="color: white;">SMM Доставка еды</span>
                 </div>
 
-                <!-- Project 5: Business Consulting -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="05">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="05" onclick="openProjectPopup(5)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-5.jpg" alt="Business Consulting Project">
-                        <a href="img/project-5.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
-                    <h6 style="color: white;">Бизнес-консалтинг</h6>
-                    <span style="color: white;">Разработка стратегии для GruzDogruz Logistics</span>
+                    <h6 style="color: white;">Бизнес-консалтинг для GruzDogruz Logistics</h6>
+                    <span style="color: white;">Разработка стратегии</span>
                 </div>
 
-                <!-- Project 6: E-Mail Marketing Campaign -->
-                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="06">
+                <div class="project-item border gradient-box rounded h-100 p-4" data-dot="06" onclick="openProjectPopup(6)">
                     <div class="position-relative mb-4">
                         <img class="img-fluid rounded project-image" src="img/project-6.jpg" alt="E-Mail Marketing Project">
-                        <a href="img/project-6.jpg" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
                     </div>
                     <h6 style="color: white;">E-Mail Маркетинг</h6>
                     <span style="color: white;">Кампания по удержанию клиентов для QuickBuy</span>
@@ -482,7 +471,17 @@
             </div>
         </div>
     </div>
-    <!-- Проекты конец -->
+
+    <!-- Popup Modal for Projects -->
+    <div id="projectPopup" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-button" onclick="closeProjectPopup()">&times;</span>
+            <h2 id="popupProjectTitle">Project Title</h2>
+            <img id="popupProjectImage" src="" alt="Project Image" class="popup-img" style="width: 100%; height: auto; margin-bottom: 20px;">
+            <p id="popupProjectDetails">Project details go here...</p>
+        </div>
+    </div>
+
 
     <!-- Команда -->
     <div class="container-fluid py-5" style="background: linear-gradient(90deg, #ffdd57, #41b0ff);" id="teams">
@@ -494,7 +493,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item text-center p-4" style="background-color: white; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 15px;">
-                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4" src="img/as.jpg" alt="">
+                        <img class="img-fluid border rounded-circle w-75 p-2 mb-4 " src="img/as.jpg" alt="">
                         <div class="team-text">
                             <h5 style="color: black;">ИМЯ ФАМИЛИЯ</h5>
                             <span style="color: #555;">Генеральный директор и консультант по цифровому маркетингу</span>
@@ -896,6 +895,139 @@
         }
     };
     return services[serviceId];
+}
+
+
+    </script>
+    <script>
+// Open project popup
+function openProjectPopup(projectId) {
+    const popupModal = document.getElementById("projectPopup");
+    
+    // Set the modal to be active and apply the 'suck out' effect
+    popupModal.style.display = "flex"; // Make modal visible
+    setTimeout(function() {
+        popupModal.classList.add('active'); // Add 'active' class after a slight delay to trigger animation
+    }, 10); // Slight delay to ensure display change is registered
+    
+    // Dynamically load content based on the clicked project
+    let projectDetails = getProjectDetails(projectId);
+    document.getElementById("popupProjectTitle").innerText = projectDetails.title;  // Set title
+    document.getElementById("popupProjectDetails").innerHTML = projectDetails.details;  // Set details
+    document.getElementById("popupProjectImage").src = projectDetails.image;  // Set image dynamically
+}
+
+// Close project popup
+function closeProjectPopup() {
+    const popupModal = document.getElementById("projectPopup");
+    
+    // Add the closing class to trigger the 'suck in' effect
+    popupModal.classList.add('closing');
+    
+    // After the animation finishes (300ms), hide the popup
+    setTimeout(function() {
+        popupModal.style.display = "none"; // Hide modal
+        popupModal.classList.remove('active', 'closing'); // Remove animation classes
+    }, 300); // Duration matches the CSS animation for closing
+}
+
+// Close popup if user clicks outside the content area
+window.onclick = function(event) {
+    const popupModal = document.getElementById("projectPopup");
+    if (event.target === popupModal) {
+        closeProjectPopup();
+    }
+};
+
+// Project details
+function getProjectDetails(projectId) {
+    const projects = {
+        1: {
+            title: 'Atmosfar Aluminium',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>Разработка современного и функционального корпоративного веб-сайта для производителя алюминиевой продукции.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Индивидуальный дизайн</li>
+                    <li>Мобильная адаптация</li>
+                    <li>SEO оптимизация для повышения видимости в поисковых системах</li>
+                </ul>
+            `,
+            image: 'img/project-1.jpg'
+        },
+        2: {
+            title: 'Ivy Wallet: Менеджер финансов',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>Разработка мобильного приложения для управления личными финансами с интуитивно понятным интерфейсом.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Функциональность отслеживания расходов и доходов</li>
+                    <li>Интеграция с банковскими счетами</li>
+                    <li>Генерация финансовых отчетов</li>
+                </ul>
+            `,
+            image: 'img/project-2.jpg'
+        },
+        3: {
+            title: 'Шестимесячный план по SEO для TechShop.kz',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>SEO стратегия для улучшения видимости интернет-магазина электроники в поисковых системах.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Анализ ключевых слов</li>
+                    <li>Оптимизация структуры сайта</li>
+                    <li>Увеличение органического трафика</li>
+                </ul>
+            `,
+            image: 'img/project-3.jpg'
+        },
+        4: {
+            title: 'SMM для Foodie: Доставка еды',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>Управление социальными сетями и создание контент-стратегии для компании по доставке еды.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Целевой контент для социальных сетей</li>
+                    <li>Рекламные кампании в Instagram и Facebook</li>
+                    <li>Аналитика вовлеченности аудитории</li>
+                </ul>
+            `,
+            image: 'img/project-4.jpg'
+        },
+        5: {
+            title: 'Разработка стратегии для GruzDogruz Logistics',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>Консалтинг и разработка бизнес-стратегии для логистической компании.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Анализ рынка и конкурентов</li>
+                    <li>Оптимизация логистических процессов</li>
+                    <li>Разработка плана по расширению бизнеса</li>
+                </ul>
+            `,
+            image: 'img/project-5.jpg'
+        },
+        6: {
+            title: 'Кампания по удержанию клиентов для QuickBuy',
+            details: `
+                <h3>Описание проекта</h3>
+                <p>E-Mail маркетинговая кампания для удержания клиентов и повышения повторных продаж в интернет-магазине.</p>
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Персонализированные email-рассылки</li>
+                    <li>Сегментация клиентов для целевых кампаний</li>
+                    <li>Анализ эффективности кампаний</li>
+                </ul>
+            `,
+            image: 'img/project-6.jpg'
+        }
+    };
+    return projects[projectId];
 }
 
 
