@@ -384,7 +384,6 @@ p {
     background: linear-gradient(90deg, #ffdd57, #41b0ff);
     transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
-    padding: 0 1rem;
 }
 
 .navbar.sticky-top {
@@ -392,7 +391,6 @@ p {
     background-color: #0056b3; /* Darker background on scroll */
 }
 
-/* Ensure the menu links have proper spacing */
 .navbar .nav-link {
     margin-right: 30px;
     color: #ffffff; /* White text color */
@@ -401,14 +399,46 @@ p {
     transition: color 0.3s ease;
 }
 
-/* Hover Effects for Menu Links */
+/* Hover Effects */
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: #ffdd57; /* Highlight on hover or active */
     background-color: transparent;
 }
 
-/* Dropdown Menu - Desktop Styling */
+/* Ensure the dropdown menu stays aligned with its toggle */
+.navbar .dropdown-menu {
+    top: 100%; /* Align the dropdown with its parent */
+    margin-top: 0; /* Remove any top margin that pushes it down */
+    padding-top: 0; /* Remove any extra padding that might push it */
+}
+
+/* Ensure there's no margin or padding on the dropdown toggle */
+.navbar .dropdown-toggle {
+    margin-bottom: 0; /* Ensure no margin below the dropdown toggle */
+    padding-bottom: 0; /* Remove unnecessary padding */
+}
+
+/* Optional - Add padding or adjust the background color for the collapse */
+.navbar-collapse.show {
+    
+    padding: 1rem;
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .nav-link {
+        margin-right: 0;
+        padding: 8px 0;
+    }
+    .navbar .navbar-nav {
+        margin-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+/* Dropdown Menu Styling */
 @media (min-width: 992px) {
     .navbar .dropdown-menu {
         visibility: hidden;
@@ -426,138 +456,6 @@ p {
         transform: translateY(0); /* Dropdown shows smoothly */
     }
 }
-
-/* Ensure the dropdown menu stays aligned with its toggle */
-.navbar .dropdown-menu {
-    top: 100%; /* Align the dropdown with its parent */
-    margin-top: 0; /* Remove any top margin that pushes it down */
-    padding-top: 0; /* Remove any extra padding that might push it */
-}
-
-/* Mobile Navbar Styling */
-@media (max-width: 991.98px) {
-    .navbar {
-        padding: 1rem; /* Ensure padding is consistent */
-    }
-
-    .navbar .nav-link {
-        margin-right: 0;
-        padding: 10px 0; /* Adjust padding for mobile links */
-        color: #ffffff; /* White text color for mobile */
-    }
-
-    .navbar .navbar-nav {
-        margin-top: 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Dropdown Menu for Mobile */
-    .navbar .dropdown-menu {
-        display: none;
-        background-color: #333;
-        color: #fff;
-        position: relative;
-        border-radius: 0;
-        padding: 0;
-        box-shadow: none; /* Remove shadow for mobile dropdown */
-    }
-
-    .navbar .nav-item.dropdown.active .dropdown-menu {
-        display: block; /* Show dropdown on click in mobile */
-    }
-}
-
-/* Navbar collapse behavior */
-.navbar-collapse {
-    position: relative;
-    top: 0;
-    right: 0;
-    width: auto;
-    height: auto;
-    background-color: transparent; /* Reset any background colors */
-    transition: right 0.3s ease-in-out;
-    z-index: 999;
-}
-
-.navbar-collapse.show {
-    right: 0; /* Ensure it's visible when opened */
-}
-
-/* Toggle Button Close/Open */
-.navbar-toggler {
-    border: none;
-    background: transparent;
-    padding: 0;
-    outline: none;
-}
-
-.navbar-toggler .menu-icon {
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    position: relative;
-    transition: all 0.4s ease;
-}
-
-.navbar-toggler .menu-icon::before,
-.navbar-toggler .menu-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    transition: all 0.4s ease;
-}
-
-.navbar-toggler .menu-icon::before {
-    top: -8px;
-}
-
-.navbar-toggler .menu-icon::after {
-    bottom: -8px;
-}
-
-.navbar-toggler.active .menu-icon {
-    background-color: transparent;
-}
-
-.navbar-toggler.active .menu-icon::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.navbar-toggler.active .menu-icon::after {
-    transform: rotate(-45deg);
-    bottom: 0;
-}
-
-.menu-icon {
-    width: 30px;
-    height: 2px;
-    background-color: #fff; /* White icon */
-    position: relative;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    transition: all 0.3s ease;
-}
-
-.menu-icon::before {
-    top: -8px;
-}
-
-.menu-icon::after {
-    top: 8px;
-}
-
-
 
 /* Button Styling */
 .btn-light {
