@@ -328,47 +328,47 @@
                 <h1 class="display-6 mb-4">Мы нацелены на лучшее во всех секторах</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" onclick="openPopup(1)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" onclick="openServicePopup(1)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-1.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" onclick="openPopup(2)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" onclick="openServicePopup(2)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-2.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openPopup(3)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openServicePopup(3)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-3.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" onclick="openPopup(4)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" onclick="openServicePopup(4)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-4.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" onclick="openPopup(5)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" onclick="openServicePopup(5)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-5.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openPopup(7)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openServicePopup(7)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-7.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openPopup(8)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openServicePopup(8)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-8.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openPopup(9)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openServicePopup(9)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-9.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openPopup(10)">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" onclick="openServicePopup(10)">
                     <div class="service-item" style="border: 2px solid black; border-radius: 8px;">
                         <img class="img-fluid rounded" src="img/service-10.jpg" alt="">
                     </div>
@@ -378,14 +378,16 @@
     </div>
 
     <!-- Popup Modal -->
+    <!-- Popup Modal for Services -->
     <div id="servicePopup" class="popup-modal">
         <div class="popup-content">
-            <span class="close-button" onclick="closePopup()">&times;</span>
+            <span class="close-button" onclick="closeServicePopup()">&times;</span>
             <h2 id="popupTitle">Service Title</h2>
             <!-- <img id="popupImage" src="" alt="Service Image" class="popup-img" style="width: 100%; height: auto; margin-bottom: 20px;"> -->
             <p id="popupDetails">Service details go here...</p>
         </div>
     </div>
+
     <!-- Услуги конец -->
 
     <!-- Feature Start -->
@@ -842,6 +844,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/service_popup.js"></script>
+    <script src="js/project_popup.js"></script>
     <script>
         // Function to detect if the user is on a mobile device
         function isMobile() {
@@ -856,354 +860,7 @@
                 contactLink.href = "https://wa.me/77022920005?text=Здравствуйте, пишу с сайта BESTWAY DIGITAL!!";
             }
         };
-    </script>
-    <script>
-        // Open popup
-        function openPopup(serviceId) {
-            const popupModal = document.getElementById("servicePopup");
-        
-            // Set the modal to be active and apply the 'suck out' effect
-            popupModal.style.display = "flex"; // Make modal visible
-            setTimeout(function() {
-                popupModal.classList.add('active'); // Add 'active' class after a slight delay to trigger animation
-            }, 10); // Slight delay to ensure display change is registered
-        
-            // Dynamically load content based on the clicked service
-            let serviceDetails = getServiceDetails(serviceId);
-            document.getElementById("popupTitle").innerText = serviceDetails.title;  // Title remains as innerText
-            document.getElementById("popupDetails").innerHTML = serviceDetails.details;  // Use innerHTML for the content
-            document.getElementById("popupImage").src = serviceDetails.image;  // Set the image dynamically
-        }
 
-        // Close popup with 'suck in' effect
-        function closePopup() {
-            const popupModal = document.getElementById("servicePopup");
-        
-            // Add the closing class to trigger the 'suck in' effect
-            popupModal.classList.add('closing');
-        
-            // After the animation finishes (300ms), hide the popup
-            setTimeout(function() {
-                popupModal.style.display = "none"; // Hide modal
-                popupModal.classList.remove('active', 'closing'); // Remove animation classes
-            }, 300); // Duration matches the CSS animation for closing
-        }
-
-        // Close popup if user clicks outside the content area
-        window.onclick = function(event) {
-            const popupModal = document.getElementById("servicePopup");
-            if (event.target === popupModal) {
-                closePopup();
-            }
-        };
-
-        // Function to get service details
-        // Function to get service details
-        function getServiceDetails(serviceId) {
-    const services = {
-        1: {
-            title: 'WEB Дизайн',
-            details: `
-                <h3>Описание</h3>
-                <p>Наши специалисты по веб-дизайну создают уникальные и адаптивные сайты, которые соответствуют вашим бизнес-целям.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Индивидуальный подход к дизайну</li>
-                    <li>Мобильная адаптивность</li>
-                    <li>Современные технологии и тренды</li>
-                    <li>Привлечение и удержание пользователей</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Мы разрабатываем пользовательский интерфейс и опыт, которые привлекают внимание и повышают вовлеченность ваших пользователей.</p>
-            `,
-            image: 'img/service-1.jpg' // Image for WEB Дизайн
-        },
-        2: {
-            title: 'Разработка Приложений',
-            details: `
-                <h3>Описание</h3>
-                <p>Мы предлагаем полный цикл разработки приложений: от проектирования до внедрения.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Разработка как веб-, так и мобильных приложений</li>
-                    <li>Интуитивно понятный интерфейс</li>
-                    <li>Высокая производительность</li>
-                    <li>Интеграция с другими системами</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Наша команда разрабатывает как веб-, так и мобильные приложения, которые адаптированы под потребности вашего бизнеса.</p>
-            `,
-            image: 'img/service-2.jpg' // Image for Разработка Приложений
-        },
-        3: {
-            title: 'SEO оптимизация',
-            details: `
-                <h3>Описание</h3>
-                <p>SEO оптимизация — это важный инструмент для повышения видимости вашего сайта в поисковых системах.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Увеличение органического трафика</li>
-                    <li>Повышение позиций в поисковой выдаче</li>
-                    <li>Анализ ключевых слов и структуры сайта</li>
-                    <li>Аудит SEO стратегий</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Наша команда анализирует структуру вашего сайта и ключевые слова, чтобы улучшить ранжирование в поисковиках.</p>
-            `,
-            image: 'img/service-3.jpg' // Image for SEO оптимизация
-        },
-        4: {
-            title: 'Социальный Маркетинг',
-            details: `
-                <h3>Описание</h3>
-                <p>Социальные сети играют важную роль в продвижении бизнеса.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Увеличение вовлеченности аудитории</li>
-                    <li>Разработка контента для социальных сетей</li>
-                    <li>Управление рекламными кампаниями</li>
-                    <li>Анализ и корректировка стратегий</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Мы разрабатываем комплексные стратегии по управлению вашими социальными аккаунтами и увеличению вовлеченности аудитории.</p>
-            `,
-            image: 'img/service-4.jpg' // Image for Социальный Маркетинг
-        },
-        5: {
-            title: 'E-Mail Маркетинг',
-            details: `
-                <h3>Описание</h3>
-                <p>E-Mail маркетинг — это эффективный способ взаимодействия с вашей аудиторией и увеличения продаж.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Персонализированные email-кампании</li>
-                    <li>Автоматизация рассылок</li>
-                    <li>Сегментация аудитории</li>
-                    <li>Анализ эффективности кампаний</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Мы создаем персонализированные email-кампании, которые помогают удерживать клиентов, а также привлекать новых.</p>
-            `,
-            image: 'img/service-5.jpg' // Image for E-Mail Маркетинг
-        },
-        6: {
-            title: 'Консалтинг и бизнес стратегии',
-            details: `
-                <h3>Описание</h3>
-                <p>Мы предлагаем консалтинговые услуги для компаний, которые стремятся к оптимизации своих бизнес-процессов и разработке долгосрочных стратегий.</p>
-                <h3>Преимущества</h3>
-                <ul>
-                    <li>Анализ текущих бизнес-процессов</li>
-                    <li>Выявление возможностей для роста</li>
-                    <li>Разработка эффективных стратегий</li>
-                    <li>Сопровождение на всех этапах внедрения</li>
-                </ul>
-                <h3>Что мы предлагаем</h3>
-                <p>Наша команда экспертов помогает вам анализировать текущую деятельность и предлагать решения для повышения эффективности.</p>
-            `,
-            image: 'img/service-6.jpg' // Image for Консалтинг и бизнес стратегии
-        },
-        7: {
-            title: 'Рекрутинг',
-            details: `
-                <h3>Описание</h3>
-                <p>Мы предоставляем полный цикл рекрутинговых услуг для поиска и найма квалифицированных кандидатов.</p>
-                <h3>Что мы предлагаем</h3>
-                <ul>
-                    <li>Поиск кандидатов</li>
-                    <li>Просмотр релевантных резюме</li>
-                    <li>Проведение первичного интервью и тестирования</li>
-                    <li>Коммуникация с кандидатами</li>
-                    <li>Анализ рынка труда</li>
-                </ul>
-            `,
-            image: 'img/service-7.jpg' // First new image
-        },
-        8: {
-            title: 'Руководитель отдела продаж',
-            details: `
-                <h3>Описание</h3>
-                <p>Управление отделом продаж с упором на достижение высоких показателей эффективности.</p>
-                <h3>Что мы предлагаем</h3>
-                <ul>
-                    <li>Обучение сотрудников</li>
-                    <li>План продаж</li>
-                    <li>Разработка стратегий продаж</li>
-                    <li>Контроль работы менеджеров</li>
-                </ul>
-            `,
-            image: 'img/service-8.jpg' // Second new image
-        },
-        9: {
-            title: 'Анализ отдела продаж',
-            details: `
-                <h3>Описание</h3>
-                <p>Анализ и оценка эффективности работы отдела продаж для улучшения результатов.</p>
-                <h3>Что мы предлагаем</h3>
-                <ul>
-                    <li>Целевая аудитория</li>
-                    <li>Средний чек</li>
-                    <li>Каналы привлечения клиента</li>
-                    <li>Анализ качества лидов</li>
-                </ul>
-            `,
-            image: 'img/service-9.jpg' // Third new image
-        },
-        10: {
-            title: 'Услуги бизнес-тренера',
-            details: `
-                <h3>Описание</h3>
-                <p>Предоставление бизнес-тренингов и тренингов для повышения квалификации сотрудников.</p>
-                <h3>Что мы предлагаем</h3>
-                <ul>
-                    <li>Разработка тренингов, вебинаров</li>
-                    <li>Навыки коммуникации</li>
-                    <li>Командообразование и лидерство</li>
-                    <li>Бизнес-игры и тимбилдинг</li>
-                </ul>
-            `,
-            image: 'img/service-10.jpg' // Fourth new image
-        }
-    };
-    return services[serviceId];
-}
-
-
-    </script>
-    <script>
-// Open project popup
-function openProjectPopup(projectId) {
-    const popupModal = document.getElementById("projectPopup");
-    
-    // Set the modal to be active and apply the 'suck out' effect
-    popupModal.style.display = "flex"; // Make modal visible
-    setTimeout(function() {
-        popupModal.classList.add('active'); // Add 'active' class after a slight delay to trigger animation
-    }, 10); // Slight delay to ensure display change is registered
-    
-    // Dynamically load content based on the clicked project
-    let projectDetails = getProjectDetails(projectId);
-    document.getElementById("popupProjectTitle").innerText = projectDetails.title;  // Set title
-    document.getElementById("popupProjectDetails").innerHTML = projectDetails.details;  // Set details
-    document.getElementById("popupProjectImage").src = projectDetails.image;  // Set image dynamically
-}
-
-// Close project popup
-function closeProjectPopup() {
-    const popupModal = document.getElementById("projectPopup");
-    
-    // Add the closing class to trigger the 'suck in' effect
-    popupModal.classList.add('closing');
-    
-    // After the animation finishes (300ms), hide the popup
-    setTimeout(function() {
-        popupModal.style.display = "none"; // Hide modal
-        popupModal.classList.remove('active', 'closing'); // Remove animation classes
-    }, 300); // Duration matches the CSS animation for closing
-}
-
-// Close popup if user clicks outside the content area
-window.onclick = function(event) {
-    const popupModal = document.getElementById("projectPopup");
-    if (event.target === popupModal) {
-        closeProjectPopup();
-    }
-};
-
-// Project details
-function getProjectDetails(projectId) {
-    const projects = {
-        1: {
-            title: 'Atmosfar Aluminium',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>Разработка современного и функционального корпоративного веб-сайта для производителя алюминиевой продукции.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Индивидуальный дизайн</li>
-                    <li>Мобильная адаптация</li>
-                    <li>SEO оптимизация для повышения видимости в поисковых системах</li>
-                </ul>
-            `,
-            image: 'img/project-1.jpg'
-        },
-        2: {
-            title: 'Ivy Wallet: Менеджер финансов',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>Разработка мобильного приложения для управления личными финансами с интуитивно понятным интерфейсом.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Функциональность отслеживания расходов и доходов</li>
-                    <li>Интеграция с банковскими счетами</li>
-                    <li>Генерация финансовых отчетов</li>
-                </ul>
-            `,
-            image: 'img/project-2.jpg'
-        },
-        3: {
-            title: 'Шестимесячный план по SEO для TechShop.kz',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>SEO стратегия для улучшения видимости интернет-магазина электроники в поисковых системах.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Анализ ключевых слов</li>
-                    <li>Оптимизация структуры сайта</li>
-                    <li>Увеличение органического трафика</li>
-                </ul>
-            `,
-            image: 'img/project-3.jpg'
-        },
-        4: {
-            title: 'SMM для Foodie: Доставка еды',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>Управление социальными сетями и создание контент-стратегии для компании по доставке еды.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Целевой контент для социальных сетей</li>
-                    <li>Рекламные кампании в Instagram и Facebook</li>
-                    <li>Аналитика вовлеченности аудитории</li>
-                </ul>
-            `,
-            image: 'img/project-4.jpg'
-        },
-        5: {
-            title: 'Разработка стратегии для GruzDogruz Logistics',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>Консалтинг и разработка бизнес-стратегии для логистической компании.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Анализ рынка и конкурентов</li>
-                    <li>Оптимизация логистических процессов</li>
-                    <li>Разработка плана по расширению бизнеса</li>
-                </ul>
-            `,
-            image: 'img/project-5.jpg'
-        },
-        6: {
-            title: 'Кампания по удержанию клиентов для QuickBuy',
-            details: `
-                <h3>Описание проекта</h3>
-                <p>E-Mail маркетинговая кампания для удержания клиентов и повышения повторных продаж в интернет-магазине.</p>
-                <h3>Ключевые особенности</h3>
-                <ul>
-                    <li>Персонализированные email-рассылки</li>
-                    <li>Сегментация клиентов для целевых кампаний</li>
-                    <li>Анализ эффективности кампаний</li>
-                </ul>
-            `,
-            image: 'img/project-6.jpg'
-        }
-    };
-    return projects[projectId];
-}
-
-
-    </script>
-    <script>
         document.getElementById('whatsappButton').addEventListener('click', function() {
             var phoneNumber = '77022920005'; // Your WhatsApp phone number
             var message = encodeURIComponent("Здравствуйте, пишу с сайта BESTWAY DIGITAL!!"); // Optional pre-filled message
