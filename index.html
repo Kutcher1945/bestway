@@ -184,9 +184,9 @@
             <!-- Add the logo image here -->
             <img src="img/logo.png" alt="Логотип" class="small-logo" style="width: 90%;">
         </a>
-        <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <button id="menuButton" class="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span> <!-- Use Bootstrap's navbar-toggler-icon -->
+        </button>                
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav me-auto p-3 p-lg-0">
                 <a href="#hero" class="nav-item nav-link active" style="color: black;">Главная</a>
@@ -194,15 +194,15 @@
                 <a href="#services" class="nav-item nav-link active" style="color: black;">Услуги</a>
                 <a href="#projects" class="nav-item nav-link active" style="color: black;">Проекты</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="color: black;">Страницы</a>
-                    <div class="dropdown-menu border-0 rounded-0 rounded-bottom shadow m-0">
-                        <!-- <a href="" class="dropdown-item">Блог</a> -->
-                        <!-- <a href="" class="dropdown-item">Особенности</a> -->
-                        <a href="#team" class="dropdown-item">Наша команда</a>
-                        <a href="#testimonials" class="dropdown-item">Отзывы</a>
-                        <!-- <a href="" class="dropdown-item">Страница 404</a> -->
-                    </div>
+                    <a href="#" class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                        Страницы
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#team">Наша команда</a></li>
+                        <li><a class="dropdown-item" href="#testimonials">Отзывы</a></li>
+                    </ul>
                 </div>
+                
                 <a href="#contacts" class="nav-item nav-link active" style="color: black;">Контакты</a>
             </div>
             <a href="#hero" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Начать</a>
@@ -215,7 +215,7 @@
     <div class="hero" id="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 col-md-12">
+                <div class="col-lg-6 col-md-12 mb-4">
                     <div class="hero-content h-100">
                         <div class="text-container p-4" style="border: 2px solid black; border-radius: 15px;">
                             <!-- Updated Welcome Message and Title -->
@@ -873,6 +873,44 @@
                 // Open WhatsApp Web on desktop in a new tab
                 window.open('https://web.whatsapp.com/send?phone=' + phoneNumber + '&text=' + message, '_blank');
             }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuButton = document.getElementById("menuButton");
+            const navbarCollapse = document.getElementById("navbarCollapse");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            menuButton.addEventListener("click", function() {
+                const isExpanded = navbarCollapse.classList.contains("show");
+            
+                if (isExpanded) {
+                    navbarCollapse.classList.remove("show");
+                    menuIcon.classList.remove("active");
+                } else {
+                    navbarCollapse.classList.add("show");
+                    menuIcon.classList.add("active");
+                }
+            });
+        
+            // Close menu when clicking outside
+            document.addEventListener("click", function(event) {
+                const isClickInsideMenu = navbarCollapse.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+            
+                if (!isClickInsideMenu && !isClickOnMenuButton && navbarCollapse.classList.contains("show")) {
+                    navbarCollapse.classList.remove("show");
+                    menuIcon.classList.remove("active");
+                }
+            });
+        });
+
+
+
+        $(document).ready(function () {
+            $('.dropdown-toggle').click(function (e) {
+                e.preventDefault();
+                $(this).next('.dropdown-menu').slideToggle();
+            });
         });
     </script>
 </body>
