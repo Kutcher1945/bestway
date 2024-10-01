@@ -61,12 +61,12 @@ p {
         font-size: 1.2rem;
     }
 }
-
+/* #00799F #000000 */
 
 .hero {
     padding-block-start: 40px;
     padding-block-end: 40px;
-    background: linear-gradient(90deg, #7b3eff, #41b0ff);
+    background: linear-gradient(90deg, #ffdd57, #41b0ff);
     background-size: 200% 200%; /* Increase background size to allow animation */
     background-position: 0% 50%; /* Start position for the animation */
     min-height: 60vh;
@@ -321,6 +321,17 @@ p {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.rounded-pill-title3 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #41b0ff; /* Yellow background color */
+    color: black; /* Black text */
+    border-radius: 50px; /* Full round pill effect */
+    font-size: 1.5rem; /* Adjust font size to match your design */
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .rounded-pill-title2 {
     display: inline-block;
     padding: 10px 20px;
@@ -456,6 +467,151 @@ p {
         transform: translateY(0); /* Dropdown shows smoothly */
     }
 }
+
+
+
+/* Steps */
+#steps {
+    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background-size: 200% 200%; /* Increase background size for animation */
+    animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+        background-position: 0% 50%; /* End position, loop back */
+    }
+}
+
+#steps-section {
+    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background-size: 200% 200%; /* Increase background size for animation */
+    animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
+}
+
+#steps-section h2 {
+    font-weight: bold;
+}
+
+.step-card {
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.icon img {
+    width: 50px;
+}
+
+.card-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text-muted {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+/* Default state for the title */
+.step-card .rounded-pill-title {
+    color: black;
+    background-color: #ffdd57;
+    padding: 10px 20px;
+    border-radius: 50px; /* Gives the rounded-pill appearance */
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* On hover: the title background turns black and text turns white */
+.step-card:hover .rounded-pill-title {
+    color: white;
+    background-color: black;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Make li text black on hover */
+.step-card:hover ol li {
+    color: black;
+}
+/* Steps end */
+
+
+/* Problems Section */
+#problems-section {
+    background-color: #ffffff; /* Background color */
+    color: #000000; /* Dark text color */
+}
+
+/* Icon and Text Styling */
+.problem-item i {
+    color: #000000; /* Icon color */
+    background-color: #ffdd57;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+.problem-item h5 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #000000; /* Dark text */
+}
+
+/* Table-like layout */
+.table {
+    display: table;
+    width: 100%;
+    border-spacing: 20px; /* Space between the cells */
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 20px;
+    vertical-align: top;
+    border-radius: 15px; /* Rounded corners */
+    background-color: #ffffff; /* White background for the cells */
+    border: 2px solid black; /* Black border around each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.table-cell:hover {
+    transform: translateY(-5px);
+    background-color: #d3d3d3; /* Grey background on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    .table-cell {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/* Problems end */
 
 /* Button Styling */
 .btn-light {
@@ -637,7 +793,7 @@ p {
 
 /*** Service ***/
 .service-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+    box-shadow: 0 0 45px rgba(0, 0, 0, .20);
     border: 1px solid transparent;
     transition: .5s;
 }
