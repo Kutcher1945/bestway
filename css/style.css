@@ -66,7 +66,7 @@ p {
 .hero {
     padding-block-start: 40px;
     padding-block-end: 40px;
-    background: linear-gradient(90deg, #ffdd57, #41b0ff);
+    background: linear-gradient(90deg, #242b5e, #242b5e);
     background-size: 200% 200%; /* Increase background size to allow animation */
     background-position: 0% 50%; /* Start position for the animation */
     min-height: 60vh;
@@ -229,7 +229,7 @@ p {
 
 /* AboutUs */
 #aboutus {
-    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background: linear-gradient(90deg, #242b5e, #242b5e); /* Initial static gradient */
     background-size: 200% 200%; /* Increase background size for animation */
     animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
 }
@@ -314,17 +314,39 @@ p {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ffdd57; /* Yellow background color */
-    color: black; /* Black text */
+    color: rgb(0, 0, 0); /* Black text */
     border-radius: 50px; /* Full round pill effect */
     font-size: 1.5rem; /* Adjust font size to match your design */
     font-weight: bold;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid black !important;
 }
+
+
+.rounded-pill-title4 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background */
+    color: rgb(0, 0, 0); /* Black text */
+    border-radius: 20px;
+    font-size: 1.5rem; /* Adjust font size to match your design */
+    font-weight: bold;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-left: 30px; /* Add margin to the left to move the whole pill */
+    transition: background-color 0.3s ease;
+}
+
+.rounded-pill-title4:hover {
+    background-color: #ffdd57; /* Yellow background on hover */
+    color: rgb(0, 0, 0); /* Keep text black on hover */
+}
+
+
 
 .rounded-pill-title3 {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #41b0ff; /* Yellow background color */
+    background-color: #ffffff; /* Yellow background color */
     color: black; /* Black text */
     border-radius: 50px; /* Full round pill effect */
     font-size: 1.5rem; /* Adjust font size to match your design */
@@ -344,7 +366,7 @@ p {
 }
 
 .gradient-text {
-    background: linear-gradient(to right, #7b3eff, #41b0ff); /* Gradient color */
+    background: linear-gradient(to right, #242b5e, #ffdd57); /* Gradient color */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; /* Make text transparent to show the gradient */
     font-weight: bold; /* Make the text bold if needed */
@@ -397,7 +419,7 @@ p {
 /*** Navbar ***/
 /* Navbar Visual Styling */
 .navbar {
-    background: linear-gradient(90deg, #ffdd57, #41b0ff);
+    background: linear-gradient(90deg, #242b5e, #242b5e);
     transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
 }
@@ -477,7 +499,7 @@ p {
 
 /* Steps */
 #steps {
-    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background: linear-gradient(90deg, #242b5e, #242b5e); /* Initial static gradient */
     background-size: 200% 200%; /* Increase background size for animation */
     animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
 }
@@ -495,7 +517,7 @@ p {
 }
 
 #steps-section {
-    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Initial static gradient */
+    background: linear-gradient(90deg, #242b5e, #242b5e); /* Initial static gradient */
     background-size: 200% 200%; /* Increase background size for animation */
     animation: gradientAnimation 8s ease infinite; /* Apply the gradient animation */
 }
@@ -1127,18 +1149,18 @@ form textarea.form-control {
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(90deg, #ffdd57, #41b0ff); /* Gradient background */
+    background: linear-gradient(90deg, #242b5e, #242b5e); /* Gradient background */
     color: black; /* Text color */
 }
 
 .footer h5,
 .footer p,
 .footer a {
-    color: black; /* Change text color to black */
+    color: rgb(255, 255, 255); /* Change text color to black */
 }
 
 .footer .btn.btn-link {
-    color: black; /* Change link color to black */
+    color: rgb(255, 255, 255); /* Change link color to black */
 }
 
 .footer .btn.btn-link::before {
